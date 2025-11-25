@@ -1,98 +1,73 @@
-import { useState } from "react";
-import { Mail, MessageSquare, User } from "lucide-react";
+import { Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
+import { toast } from "sonner";
 
 const Contact = () => {
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    toast({
-      title: "¡Mensaje enviado!",
-      description: "Nos pondremos en contacto contigo pronto.",
-    });
-    
-    setIsSubmitting(false);
+    toast.success("¡Mensaje enviado! Te contactaremos pronto.");
     (e.target as HTMLFormElement).reset();
   };
 
   return (
-    <section id="contact" className="py-20 px-4">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="gradient-text">Contacto</span>
+    <section id="contact" className="py-32 px-4 bg-gradient-to-b from-gray-900 to-black">
+      <div className="max-w-3xl mx-auto">
+        <div className="text-center mb-16 animate-fade-in">
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-white">
+            <span className="gradient-text">Hablemos</span> de tu Proyecto
           </h2>
-          <p className="text-xl text-muted-foreground">
-            ¿Tienes un proyecto en mente? Hablemos
+          <p className="text-xl text-gray-300 leading-relaxed">
+            Estamos listos para convertir tu visión en realidad digital
           </p>
         </div>
 
-        <div className="glass-card p-8 rounded-2xl">
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="space-y-2">
-              <label htmlFor="name" className="text-sm font-medium flex items-center gap-2">
-                <User className="h-4 w-4 text-primary" />
-                Nombre
-              </label>
-              <Input 
-                id="name"
-                name="name"
-                placeholder="Tu nombre completo" 
-                required
-                className="bg-background/50"
-              />
-            </div>
+        <form onSubmit={handleSubmit} className="bg-white p-10 rounded-3xl space-y-8 animate-fade-in shadow-2xl" style={{ animationDelay: "0.2s" }}>
+          <div>
+            <label htmlFor="name" className="block text-sm font-semibold mb-3 text-gray-900">
+              Nombre Completo
+            </label>
+            <Input
+              id="name"
+              type="text"
+              placeholder="Juan Pérez"
+              required
+              className="bg-gray-50 border-gray-200 py-6 text-lg rounded-xl"
+            />
+          </div>
 
-            <div className="space-y-2">
-              <label htmlFor="email" className="text-sm font-medium flex items-center gap-2">
-                <Mail className="h-4 w-4 text-primary" />
-                Email
-              </label>
-              <Input 
-                id="email"
-                name="email"
-                type="email"
-                placeholder="tu@email.com" 
-                required
-                className="bg-background/50"
-              />
-            </div>
+          <div>
+            <label htmlFor="email" className="block text-sm font-semibold mb-3 text-gray-900">
+              Email
+            </label>
+            <Input
+              id="email"
+              type="email"
+              placeholder="juan@ejemplo.com"
+              required
+              className="bg-gray-50 border-gray-200 py-6 text-lg rounded-xl"
+            />
+          </div>
 
-            <div className="space-y-2">
-              <label htmlFor="message" className="text-sm font-medium flex items-center gap-2">
-                <MessageSquare className="h-4 w-4 text-primary" />
-                Mensaje
-              </label>
-              <Textarea 
-                id="message"
-                name="message"
-                placeholder="Cuéntanos sobre tu proyecto..." 
-                rows={6}
-                required
-                className="bg-background/50 resize-none"
-              />
-            </div>
+          <div>
+            <label htmlFor="message" className="block text-sm font-semibold mb-3 text-gray-900">
+              Cuéntanos sobre tu proyecto
+            </label>
+            <Textarea
+              id="message"
+              placeholder="Describe tu idea, necesidades o preguntas..."
+              rows={6}
+              required
+              className="bg-gray-50 border-gray-200 resize-none text-lg rounded-xl"
+            />
+          </div>
 
-            <Button 
-              type="submit" 
-              size="lg" 
-              className="w-full gradient-tech text-white font-semibold hover:opacity-90 transition-opacity"
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? "Enviando..." : "Enviar Mensaje"}
-            </Button>
-          </form>
-        </div>
+          <Button type="submit" size="lg" className="w-full gradient-tech text-white font-semibold hover:opacity-90 transition-opacity py-7 text-lg rounded-xl">
+            Enviar Mensaje
+            <Send className="ml-2 h-5 w-5" />
+          </Button>
+        </form>
       </div>
     </section>
   );
