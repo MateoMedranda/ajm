@@ -1,26 +1,26 @@
-import { Globe, Smartphone, Box } from "lucide-react";
+import { Globe, Wrench, Smartphone } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const services = [
   {
     icon: Globe,
-    title: "Desarrollo Web",
-    description: "Sitios web modernos, responsivos y optimizados para SEO. Desde landing pages hasta aplicaciones web complejas.",
-    features: ["React & TypeScript", "Diseño responsivo", "Optimización SEO", "Alta performance"],
+    title: "Desarrollo Web & Apps Móviles",
+    description: "Sitios web modernos, PWAs y aplicaciones móviles nativas o híbridas para iOS y Android.",
+    features: ["React & TypeScript", "PWAs", "iOS/Android Nativo", "Landing Pages"],
     gradient: "from-primary to-secondary",
   },
   {
-    icon: Smartphone,
-    title: "Apps Móviles",
-    description: "Aplicaciones móviles nativas y multiplataforma para iOS y Android con la mejor experiencia de usuario.",
-    features: ["iOS & Android", "UI/UX moderna", "Integración API", "Push notifications"],
+    icon: Wrench,
+    title: "Mantenimiento y Refactorización",
+    description: "Actualiza, optimiza y asegura proyectos existentes. Dale nueva vida a tu web abandonada.",
+    features: ["Actualización de Código", "Optimización SEO", "Mejora de Velocidad", "Seguridad"],
     gradient: "from-secondary to-accent",
   },
   {
-    icon: Box,
-    title: "Modelado 3D",
-    description: "Creación de assets 3D profesionales para videojuegos, desde personajes hasta entornos completos.",
-    features: ["Game assets", "Personajes 3D", "Entornos", "Texturas PBR"],
+    icon: Smartphone,
+    title: "Consultoría Técnica",
+    description: "Asesoría experta en arquitectura de software, escalabilidad y selección de tecnologías.",
+    features: ["Arquitectura Escalable", "Code Review", "Tech Stack", "Best Practices"],
     gradient: "from-accent to-primary",
   },
 ];
@@ -31,10 +31,10 @@ const Services = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Nuestros <span className="gradient-text">Servicios</span>
+            Servicios <span className="gradient-text">Core</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Soluciones tecnológicas completas para llevar tu proyecto al siguiente nivel
+            Desarrollo, mantenimiento y consultoría técnica para proyectos de cualquier escala
           </p>
         </div>
 
