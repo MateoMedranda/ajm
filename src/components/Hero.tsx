@@ -21,29 +21,31 @@ const Hero = () => {
           <img src={ajmLogo} alt="AJM Web Solutions" className="w-48 h-48 mx-auto drop-shadow-2xl" />
         </div>
         
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
-          <span className="gradient-text">AJM</span>
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in leading-tight">
+          <span className="text-foreground">Tu Socio Tecnológico Integral:</span>
           <br />
-          <span className="text-foreground">Web Solutions</span>
+          <span className="gradient-text">Desarrollo Web, Móvil e IA</span>
+          <br />
+          <span className="text-foreground">Aplicada a tus Datos</span>
         </h1>
         
-        <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto animate-fade-in" style={{
+        <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto animate-fade-in" style={{
         animationDelay: "0.2s"
       }}>
-          Desarrollo web profesional, aplicaciones móviles y modelado 3D para videojuegos
+          Apps, Web, Mantenimiento, RAG e Infraestructura. Transformamos código y datos en soluciones inteligentes.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{
         animationDelay: "0.4s"
       }}>
           <Button size="lg" className="gradient-tech text-white font-semibold hover:opacity-90 transition-opacity" onClick={scrollToContact}>
-            Comenzar Proyecto
+            Agendar Consultoría
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
-          <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10" onClick={() => document.getElementById("services")?.scrollIntoView({
+          <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10" onClick={() => document.getElementById("rag-section")?.scrollIntoView({
           behavior: "smooth"
         })}>
-            Ver Servicios
+            Ver Soluciones IA
           </Button>
         </div>
       </div>
