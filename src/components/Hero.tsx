@@ -21,18 +21,17 @@ const Hero = () => {
           <img src={ajmLogo} alt="AJM Web Solutions" className="w-48 h-48 mx-auto drop-shadow-2xl" />
         </div>
         
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in leading-tight">
-          <span className="text-foreground">Tu Socio Tecnológico Integral:</span>
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-12 animate-fade-in leading-tight">
+          <span className="gradient-text">Transformación Digital</span>
           <br />
-          <span className="gradient-text">Desarrollo Web, Móvil e IA</span>
-          <br />
-          <span className="text-foreground">Aplicada a tus Datos</span>
+          <span className="text-foreground">con IA y Desarrollo</span>
         </h1>
         
-        <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto animate-fade-in" style={{
+        <p className="text-xl md:text-2xl text-muted-foreground mb-16 max-w-4xl mx-auto animate-fade-in leading-relaxed" style={{
         animationDelay: "0.2s"
       }}>
-          Apps, Web, Mantenimiento, RAG e Infraestructura. Transformamos código y datos en soluciones inteligentes.
+          Apps, Web, Mantenimiento, RAG e Infraestructura inteligente. <br />
+          <span className="text-primary font-semibold">Convertimos tus ideas en realidad digital.</span>
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{
