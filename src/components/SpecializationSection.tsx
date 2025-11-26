@@ -1,10 +1,19 @@
 import { Sparkles, Gamepad2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import vrUserImg from "@/assets/vr-user-hero.jpg";
 
 const SpecializationSection = () => {
+  const { elementRef, isVisible } = useScrollAnimation();
+  
   return (
-    <section id="vr-3d" className="py-32 px-4 bg-gradient-to-b from-gray-900 to-black relative overflow-hidden animate-slide-in-left">
+    <section 
+      ref={elementRef}
+      id="vr-3d" 
+      className={`py-32 px-4 bg-gradient-to-b from-gray-900 to-black relative overflow-hidden transition-all duration-1000 ${
+        isVisible ? 'opacity-100 -translate-x-0' : 'opacity-0 -translate-x-24'
+      }`}
+    >
       {/* Animated background */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/40 rounded-full blur-3xl animate-pulse-glow" />
