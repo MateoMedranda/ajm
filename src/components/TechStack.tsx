@@ -1,6 +1,8 @@
 import { Code, Cloud, Database, Cpu, Layers, Box, Smartphone, Zap } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const TechStack = () => {
+  const { elementRef, isVisible } = useScrollAnimation();
   const technologies = [
     { icon: Code, name: "React" },
     { icon: Layers, name: "TypeScript" },
@@ -20,7 +22,12 @@ const TechStack = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-gray-900 to-black border-t border-gray-800 animate-slide-in-left">
+    <section 
+      ref={elementRef}
+      className={`py-20 px-4 bg-gradient-to-b from-gray-900 to-black border-t border-gray-800 transition-all duration-1000 ${
+        isVisible ? 'opacity-100 -translate-x-0' : 'opacity-0 -translate-x-24'
+      }`}
+    >
       <div className="max-w-7xl mx-auto">
         <h3 className="text-center text-2xl font-bold text-white mb-4">
           Tecnologías que Dominamos

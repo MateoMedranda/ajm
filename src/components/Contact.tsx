@@ -3,8 +3,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const Contact = () => {
+  const { elementRef, isVisible } = useScrollAnimation();
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     toast.success("¡Mensaje enviado! Te contactaremos pronto.");
@@ -12,7 +14,13 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-32 px-4 bg-white animate-slide-in-right">
+    <section 
+      ref={elementRef}
+      id="contact" 
+      className={`py-32 px-4 bg-white transition-all duration-1000 ${
+        isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-24'
+      }`}
+    >
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">

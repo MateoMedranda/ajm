@@ -1,7 +1,9 @@
 import { Check, Zap, TrendingUp, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const InfrastructureSection = () => {
+  const { elementRef, isVisible } = useScrollAnimation();
   const plans = [
     {
       name: "Plano",
@@ -59,7 +61,13 @@ const InfrastructureSection = () => {
   ];
 
   return (
-    <section id="hosting" className="py-32 px-4 bg-white animate-slide-in-right">
+    <section 
+      ref={elementRef}
+      id="hosting" 
+      className={`py-32 px-4 bg-white transition-all duration-1000 ${
+        isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-24'
+      }`}
+    >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20 animate-fade-in">
           <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
