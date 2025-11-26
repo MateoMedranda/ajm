@@ -3,13 +3,13 @@ import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import vrUserImg from "@/assets/vr-user-hero.jpg";
 
-const SpecializationSection = () => {
+const SpecializationSection = ({ id }: { id?: string }) => {
   const { elementRef, isVisible } = useScrollAnimation();
   
   return (
     <section 
       ref={elementRef}
-      id="vr-3d" 
+      id={id} 
       className={`py-32 px-4 bg-gradient-to-b from-gray-900 to-black relative overflow-hidden transition-all duration-1000 ${
         isVisible ? 'opacity-100 -translate-x-0' : 'opacity-0 -translate-x-24'
       }`}

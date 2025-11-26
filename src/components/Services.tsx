@@ -66,13 +66,13 @@ const additionalServices = [
   },
 ];
 
-const Services = () => {
+const Services = ({ id }: { id?: string }) => {
   const { elementRef: titleRef, isVisible: titleVisible } = useScrollAnimation();
   const { elementRef: webRef, isVisible: webVisible } = useScrollAnimation();
   const { elementRef: additionalRef, isVisible: additionalVisible } = useScrollAnimation();
 
   return (
-    <section id="services" className="py-32 px-4 bg-white">
+    <section id={id} className="py-32 px-4 bg-white">
       <div className="max-w-7xl mx-auto">
         <div 
           ref={titleRef}

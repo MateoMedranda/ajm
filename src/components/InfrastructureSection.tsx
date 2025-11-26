@@ -2,7 +2,7 @@ import { Check, Zap, TrendingUp, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
-const InfrastructureSection = () => {
+const InfrastructureSection = ({ id }: { id?: string }) => {
   const { elementRef, isVisible } = useScrollAnimation();
   const plans = [
     {
@@ -63,7 +63,7 @@ const InfrastructureSection = () => {
   return (
     <section 
       ref={elementRef}
-      id="hosting" 
+      id={id} 
       className={`py-32 px-4 bg-white transition-all duration-1000 ${
         isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-24'
       }`}
