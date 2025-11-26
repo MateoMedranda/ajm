@@ -1,7 +1,11 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ajmLogo from "@/assets/ajm-hex-logo.png";
-const Hero = ({ id }: { id?: string }) => {
+const Hero = ({
+  id
+}: {
+  id?: string;
+}) => {
   const scrollToContact = () => {
     document.getElementById("contact")?.scrollIntoView({
       behavior: "smooth"
@@ -16,7 +20,7 @@ const Hero = ({ id }: { id?: string }) => {
       }} />
       </div>
 
-      <div className="relative z-10 text-center max-w-5xl mx-auto">
+      <div className="relative z-10 text-center max-w-5xl mx-auto mt-[100px] mb-[60px]">
         <div className="mb-8 animate-float">
           <img src={ajmLogo} alt="AJM Web Solutions" className="w-48 h-48 mx-auto drop-shadow-2xl" />
         </div>
