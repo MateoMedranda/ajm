@@ -4,7 +4,7 @@ import vrUserImg from "@/assets/vr-user-hero.jpg";
 
 const SpecializationSection = () => {
   return (
-    <section id="vr-3d" className="py-32 px-4 bg-gradient-to-b from-gray-900 to-black relative overflow-hidden">
+    <section id="vr-3d" className="py-32 px-4 bg-gradient-to-b from-gray-900 to-black relative overflow-hidden animate-slide-in-left">
       {/* Animated background */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/40 rounded-full blur-3xl animate-pulse-glow" />

@@ -59,7 +59,7 @@ const InfrastructureSection = () => {
   ];
 
   return (
-    <section id="hosting" className="py-32 px-4 bg-white">
+    <section id="hosting" className="py-32 px-4 bg-white animate-slide-in-right">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20 animate-fade-in">
           <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">

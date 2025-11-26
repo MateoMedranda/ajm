@@ -20,12 +20,12 @@ const TechStack = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gray-50 border-t border-gray-200">
+    <section className="py-20 px-4 bg-gradient-to-b from-gray-900 to-black border-t border-gray-800 animate-slide-in-left">
       <div className="max-w-7xl mx-auto">
-        <h3 className="text-center text-2xl font-bold text-gray-900 mb-4">
+        <h3 className="text-center text-2xl font-bold text-white mb-4">
           Tecnologías que Dominamos
         </h3>
-        <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+        <p className="text-center text-gray-300 mb-12 max-w-2xl mx-auto">
           Trabajamos con las herramientas más avanzadas del mercado
         </p>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8 items-center justify-items-center">
@@ -37,8 +37,8 @@ const TechStack = () => {
                 className="flex flex-col items-center gap-3 group animate-fade-in grayscale hover:grayscale-0 transition-all duration-300"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <Icon className="h-14 w-14 text-gray-700 group-hover:text-purple-600 transition-colors duration-300" />
-                <span className="text-xs text-gray-600 font-medium">{tech.name}</span>
+                <Icon className="h-14 w-14 text-gray-400 group-hover:text-purple-400 transition-colors duration-300" />
+                <span className="text-xs text-gray-400 font-medium">{tech.name}</span>
               </div>
             );
           })}
