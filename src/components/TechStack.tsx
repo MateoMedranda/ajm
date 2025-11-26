@@ -1,7 +1,7 @@
 import { Code, Cloud, Database, Cpu, Layers, Box, Smartphone, Zap } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
-const TechStack = () => {
+const TechStack = ({ id }: { id?: string }) => {
   const { elementRef, isVisible } = useScrollAnimation();
   const technologies = [
     { icon: Code, name: "React" },
@@ -23,6 +23,7 @@ const TechStack = () => {
 
   return (
     <section 
+      id={id}
       ref={elementRef}
       className={`py-20 px-4 bg-gradient-to-b from-gray-900 to-black border-t border-gray-800 transition-all duration-1000 ${
         isVisible ? 'opacity-100 -translate-x-0' : 'opacity-0 -translate-x-24'

@@ -5,7 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
-const Contact = () => {
+const Contact = ({ id }: { id?: string }) => {
   const { elementRef, isVisible } = useScrollAnimation();
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -16,7 +16,7 @@ const Contact = () => {
   return (
     <section 
       ref={elementRef}
-      id="contact" 
+      id={id} 
       className={`py-32 px-4 bg-white transition-all duration-1000 ${
         isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-24'
       }`}
