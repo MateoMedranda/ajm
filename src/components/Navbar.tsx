@@ -75,6 +75,13 @@ const Navbar = () => {
               </DropdownMenu>
 
               <Link
+                to="/nosotros"
+                className="text-muted-foreground hover:text-primary transition-colors font-medium"
+              >
+                Nosotros
+              </Link>
+
+              <Link
                 to="/central-dev"
                 className="text-muted-foreground hover:text-primary transition-colors font-medium"
               >
@@ -126,6 +133,14 @@ const Navbar = () => {
                 {link.name}
               </button>
             ))}
+
+            <Link
+              to="/nosotros"
+              onClick={() => setIsOpen(false)}
+              className="block w-full text-left px-3 py-2 text-base font-medium text-muted-foreground hover:text-primary hover:bg-accent/50 rounded-md transition-colors"
+            >
+              Nosotros
+            </Link>
 
             <Link
               to="/central-dev"

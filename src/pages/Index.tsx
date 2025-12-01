@@ -9,7 +9,7 @@ const Index = () => {
   return <div className="min-h-screen">
     <Navbar />
     <Hero id="hero" />
-    <Services id="services" className="pt-[40px] pb-[40px]" />
+    <Services id="services" />
     <SpecializationSection id="vr" />
     <TechStack id="tech" />
     <Contact id="contact" />
