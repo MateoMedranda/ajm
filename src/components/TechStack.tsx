@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 const TechStack = ({ id }: { id?: string }) => {
   const { elementRef, isVisible } = useScrollAnimation();
   const [glowingIndex, setGlowingIndex] = useState(0);
-  
+
   const technologies = [
     { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", color: "#61DAFB" },
     { name: "TypeScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg", color: "#3178C6" },
@@ -23,28 +23,22 @@ const TechStack = ({ id }: { id?: string }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setGlowingIndex(Math.floor(Math.random() * technologies.length));
-    }, 10000);
-    
+    }, 3000);
+
     return () => clearInterval(interval);
   }, [technologies.length]);
 
   return (
-    <section 
+    <section
       id={id}
       ref={elementRef}
-      className={`relative py-20 px-4 bg-gradient-to-b from-gray-900 to-black border-t border-gray-800 transition-all duration-1000 ${
-        isVisible ? 'opacity-100 -translate-x-0' : 'opacity-0 -translate-x-24'
-      }`}
+      // CORRECCIÓN: Fondo estático, sin animación de movimiento, width full y overflow hidden
+      className="relative py-20 px-4 bg-gradient-to-b from-gray-900 to-black w-full overflow-hidden"
     >
-      {/* Curved border top */}
-      <div className="absolute top-0 left-0 right-0 overflow-hidden leading-none text-gray-900">
-        <svg className="relative block w-full h-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" 
-                className="fill-gray-900"></path>
-        </svg>
-      </div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      {/* CORRECCIÓN: La animación se aplica aquí, al contenedor interno */}
+      <div className={`max-w-7xl mx-auto relative z-10 transition-all duration-1000${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-24'
+        }`}>
         <h3 className="text-center text-2xl font-bold text-white mb-4">
           Tecnologías que Dominamos
         </h3>
@@ -53,20 +47,18 @@ const TechStack = ({ id }: { id?: string }) => {
         </p>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-12 items-center justify-items-center">
           {technologies.map((tech, index) => (
-            <div 
+            <div
               key={tech.name}
-              className="flex flex-col items-center gap-3 group transition-all duration-500"
+              className="flex flex-col items-center gap-3 group transition-all duration-500 cursor-pointer"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className={`relative transition-all duration-1000 ${
-                glowingIndex === index ? 'scale-110' : ''
-              }`}>
-                <img 
-                  src={tech.logo} 
+              <div className={`relative transition-all duration-1000 ${glowingIndex === index ? 'scale-110' : ''
+                }`}>
+                <img
+                  src={tech.logo}
                   alt={tech.name}
-                  className={`h-16 w-16 object-contain transition-all duration-1000 ${
-                    glowingIndex === index ? '' : 'grayscale'
-                  } group-hover:grayscale-0 group-hover:scale-110`}
+                  className={`h-16 w-16 object-contain transition-all duration-1000 ${glowingIndex === index ? '' : 'grayscale'
+                    } group-hover:grayscale-0 group-hover:scale-110`}
                   style={{
                     filter: glowingIndex === index ? `drop-shadow(0 0 20px ${tech.color}80)` : undefined,
                   }}
@@ -85,12 +77,14 @@ const TechStack = ({ id }: { id?: string }) => {
           ))}
         </div>
       </div>
-
-      {/* Curved border bottom */}
+      <br></br>
+      <br></br>
+      <br></br>
+      {/* Curved border bottom - Estático */}
       <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-none rotate-180 text-white">
         <svg className="relative block w-full h-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" 
-                className="fill-white"></path>
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            className="fill-white"></path>
         </svg>
       </div>
     </section>

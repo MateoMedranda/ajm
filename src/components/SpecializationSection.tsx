@@ -5,22 +5,24 @@ const SpecializationSection = ({ id }: { id?: string }) => {
   const { elementRef, isVisible } = useScrollAnimation();
 
   return (
-    <section 
+    <section
       id={id}
       ref={elementRef}
-      className={`relative py-24 px-4 bg-gradient-to-b from-gray-900 to-black transition-all duration-1000 ${
-        isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-24'
-      }`}
+      // CAMBIO 1: Quitamos animation y opacity de aquí. Agregamos overflow-hidden.
+      // El fondo se queda estático en el contenedor principal.
+      className="relative py-24 px-4 bg-gradient-to-b from-gray-900 to-black w-full overflow-hidden"
     >
-      {/* Curved border top */}
+      {/* Curved border top - Se queda estático */}
       <div className="absolute top-0 left-0 right-0 overflow-hidden leading-none text-white">
         <svg className="relative block w-full h-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" 
-                className="fill-white"></path>
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            className="fill-white"></path>
         </svg>
       </div>
 
-      <div className="max-w-6xl mx-auto relative z-10">
+      {/* CAMBIO 2: Aplicamos la animación AQUI, al contenedor del contenido */}
+      <div className={`max-w-6xl mx-auto relative z-10 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-24'
+        }`}>
         <div className="text-center mb-12">
           <h3 className="text-3xl md:text-4xl font-bold mb-4 text-white">
             Modelado <span className="gradient-text">3D y Realidad Virtual</span>
@@ -73,11 +75,11 @@ const SpecializationSection = ({ id }: { id?: string }) => {
         </div>
       </div>
 
-      {/* Curved border bottom */}
+      {/* Curved border bottom - Se queda estático */}
       <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-none rotate-180 text-gray-900">
         <svg className="relative block w-full h-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" 
-                className="fill-gray-900"></path>
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            className="fill-gray-900"></path>
         </svg>
       </div>
     </section>

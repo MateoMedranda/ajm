@@ -37,12 +37,12 @@ All colors MUST be HSL.
     --ring: 270 70% 60%;
 
     --radius: 0.75rem;
-    
+
     /* Tech gradient colors */
     --gradient-start: 270 70% 60%;
     --gradient-middle: 220 90% 55%;
     --gradient-end: 190 85% 55%;
-    
+
     /* Glass effect */
     --glass-bg: 220 40% 12% / 0.6;
     --glass-border: 220 30% 25% / 0.3;
@@ -109,7 +109,7 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-hidden;
     background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(220 50% 6%) 100%);
     min-height: 100vh;
   }
@@ -119,41 +119,47 @@ All colors MUST be HSL.
   .gradient-tech {
     background: linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-middle)), hsl(var(--gradient-end)));
   }
-  
+
   .gradient-text {
     background: linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-middle)), hsl(var(--gradient-end)));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  
+
   .glass-card {
     background: hsl(var(--glass-bg));
     backdrop-filter: blur(12px);
     border: 1px solid hsl(var(--glass-border));
   }
-  
+
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
-  
+
   .animate-pulse-glow {
     animation: pulse-glow 3s ease-in-out infinite;
   }
-  
+
   @keyframes float {
-    0%, 100% {
+
+    0%,
+    100% {
       transform: translateY(0px);
     }
+
     50% {
       transform: translateY(-20px);
     }
   }
-  
+
   @keyframes pulse-glow {
-    0%, 100% {
+
+    0%,
+    100% {
       box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
     }
+
     50% {
       box-shadow: 0 0 40px hsl(var(--primary) / 0.6), 0 0 60px hsl(var(--accent) / 0.4);
     }

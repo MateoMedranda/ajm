@@ -65,19 +65,16 @@ const ServicesPage = () => {
       <section
         id={service.id}
         ref={elementRef}
-        className={`relative py-32 px-4 transition-all duration-1000 ${
-          isVisible ? 'opacity-100 translate-x-0' : `opacity-0 ${isEven ? 'translate-x-24' : '-translate-x-24'}`
-        } ${isEven ? 'bg-white' : 'bg-gradient-to-b from-gray-900 to-black'}`}
+        // CAMBIO 1: Quitamos la animación de aquí y agregamos overflow-hidden
+        className={`relative py-32 px-4 w-full overflow-hidden ${isEven ? 'bg-white' : 'bg-gradient-to-b from-gray-900 to-black'
+          }`}
       >
-        {/* Curved border top */}
-        <div className={`absolute top-0 left-0 right-0 overflow-hidden leading-none ${isEven ? 'text-gray-900' : 'text-white'}`}>
-          <svg className="relative block w-full h-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" 
-                  className={isEven ? 'fill-gray-900' : 'fill-white'}></path>
-          </svg>
-        </div>
 
-        <div className="max-w-6xl mx-auto relative z-10">
+        {/* CAMBIO 2: Aplicamos la animación AQUI, al contenido */}
+        <div className={`max-w-6xl mx-auto relative z-10 transition-all duration-1000 ${isVisible
+          ? 'opacity-100 translate-x-0'
+          : `opacity-0 ${isEven ? 'translate-x-24' : '-translate-x-24'}`
+          }`}>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className={`${isEven ? 'md:order-1' : 'md:order-2'}`}>
               <div className={`w-20 h-20 rounded-2xl gradient-tech flex items-center justify-center mb-6`}>
@@ -116,13 +113,15 @@ const ServicesPage = () => {
           </div>
         </div>
 
-        {/* Curved border bottom */}
-        <div className={`absolute bottom-0 left-0 right-0 overflow-hidden leading-none rotate-180 ${isEven ? 'text-gray-900' : 'text-white'}`}>
-          <svg className="relative block w-full h-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" 
-                  className={isEven ? 'fill-gray-900' : 'fill-white'}></path>
-          </svg>
-        </div>
+        {/* Curved border bottom - Se queda estático */}
+        {index != 5 &&
+          <div className={`absolute bottom-0 left-0 right-0 overflow-hidden leading-none rotate-180 ${isEven ? 'text-gray-900' : 'text-white'}`}>
+            <svg className="relative block w-full h-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+              <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                className={isEven ? 'fill-gray-900' : 'fill-white'}></path>
+            </svg>
+          </div>
+        }
       </section>
     );
   };
