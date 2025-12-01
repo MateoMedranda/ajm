@@ -69,11 +69,18 @@ const additionalServices = [
 const Services = ({ id }: { id?: string }) => {
   const { elementRef: titleRef, isVisible: titleVisible } = useScrollAnimation();
   const { elementRef: webRef, isVisible: webVisible } = useScrollAnimation();
-  const { elementRef: additionalRef, isVisible: additionalVisible } = useScrollAnimation();
 
   return (
-    <section id={id} className="py-32 px-4 bg-white">
-      <div className="max-w-7xl mx-auto">
+    <section id={id} className="relative py-32 px-4 bg-white">
+      {/* Curved border top */}
+      <div className="absolute top-0 left-0 right-0 overflow-hidden leading-none text-background">
+        <svg className="relative block w-full h-20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" 
+                className="fill-current"></path>
+        </svg>
+      </div>
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         <div 
           ref={titleRef}
           className={`text-center mb-20 transition-all duration-700 ${
@@ -175,61 +182,14 @@ const Services = ({ id }: { id?: string }) => {
           </div>
         </div>
 
-        {/* Servicios Adicionales */}
-        <div 
-          ref={additionalRef}
-          className={`transition-all duration-700 ${
-            additionalVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-24'
-          }`}
-        >
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">
-              Servicios <span className="gradient-text">Complementarios</span>
-            </h3>
-          </div>
+      </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {additionalServices.map((service, index) => {
-              const Icon = service.icon;
-              return (
-                <div 
-                  key={service.title}
-                  className="group"
-                >
-                  <div className="bg-gray-50 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-500 border border-gray-200 h-full">
-                    <div className="p-6">
-                      <div className="w-12 h-12 rounded-xl gradient-tech flex items-center justify-center mb-4">
-                        <Icon className="h-6 w-6 text-white" />
-                      </div>
-                      
-                      <h3 className="text-xl font-bold mb-3 text-gray-900">{service.title}</h3>
-                      <p className="text-gray-600 mb-4 leading-relaxed text-sm">
-                        {service.description}
-                      </p>
-                      
-                      <ul className="space-y-2 mb-6">
-                        {service.features.map((feature) => (
-                          <li key={feature} className="flex items-center text-xs text-gray-700">
-                            <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-purple-600 to-cyan-500 mr-2" />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-
-                      <Button 
-                        variant="outline"
-                        className="w-full border-gray-300 text-gray-900 hover:bg-gray-100 font-semibold py-5 rounded-xl"
-                        onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-                      >
-                        {service.cta}
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
+      {/* Curved border bottom */}
+      <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-none rotate-180 text-background">
+        <svg className="relative block w-full h-20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" 
+                className="fill-current"></path>
+        </svg>
       </div>
     </section>
   );

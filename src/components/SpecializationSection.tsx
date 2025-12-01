@@ -1,89 +1,84 @@
-import { Sparkles, Gamepad2 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Box, Gamepad2 } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
-import vrUserImg from "@/assets/vr-user-hero.jpg";
 
 const SpecializationSection = ({ id }: { id?: string }) => {
   const { elementRef, isVisible } = useScrollAnimation();
-  
+
   return (
     <section 
+      id={id}
       ref={elementRef}
-      id={id} 
-      className={`py-32 px-4 bg-gradient-to-b from-gray-900 to-black relative overflow-hidden transition-all duration-1000 ${
-        isVisible ? 'opacity-100 -translate-x-0' : 'opacity-0 -translate-x-24'
+      className={`relative py-24 px-4 bg-gradient-to-b from-gray-900 to-black transition-all duration-1000 ${
+        isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-24'
       }`}
     >
-      {/* Animated background */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/40 rounded-full blur-3xl animate-pulse-glow" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/40 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: "1.5s" }} />
+      {/* Curved border top */}
+      <div className="absolute top-0 left-0 right-0 overflow-hidden leading-none text-white">
+        <svg className="relative block w-full h-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" 
+                className="fill-white"></path>
+        </svg>
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          <div className="animate-fade-in">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8">
-              <Sparkles className="h-5 w-5 text-primary" />
-              <span className="text-sm font-semibold text-primary">Tecnología Inmersiva</span>
+      <div className="max-w-6xl mx-auto relative z-10">
+        <div className="text-center mb-12">
+          <h3 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+            Modelado <span className="gradient-text">3D y Realidad Virtual</span>
+          </h3>
+          <p className="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto">
+            Experiencias inmersivas para videojuegos y aplicaciones
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="glass-card p-6 rounded-2xl hover:scale-105 transition-all duration-300">
+            <div className="w-14 h-14 rounded-xl gradient-tech flex items-center justify-center mb-4">
+              <Box className="h-7 w-7 text-white" />
             </div>
-            
-            <h2 className="text-5xl md:text-6xl font-bold mb-8 text-white leading-tight">
-              <span className="gradient-text">Modelado 3D</span> y<br />
-              Realidad Virtual
-            </h2>
-            
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              Modelado en modelado 3D y realidad virtual, libros de datos de 2B aprovechados.{" "}
-              <span className="text-primary font-semibold">Transformamos código y datos para en videojuegos inteligentes.</span>
+            <h3 className="text-xl font-bold mb-3 text-white">Modelado 3D</h3>
+            <p className="text-gray-300 mb-4 leading-relaxed text-sm">
+              Modelos 3D de alta calidad para videojuegos y aplicaciones.
             </p>
-
-            <div className="space-y-4 mb-10">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl gradient-tech flex items-center justify-center flex-shrink-0">
-                  <Gamepad2 className="h-6 w-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-white mb-2">Videojuegos y Experiencias VR</h3>
-                  <p className="text-gray-400">Creación de mundos 3D inmersivos para gaming y simulaciones empresariales</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl gradient-tech flex items-center justify-center flex-shrink-0">
-                  <Sparkles className="h-6 w-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-white mb-2">Modelado y Animación 3D</h3>
-                  <p className="text-gray-400">Assets profesionales para proyectos de realidad aumentada y metaverso</p>
-                </div>
-              </div>
-            </div>
-
-            <Button 
-              size="lg"
-              className="gradient-tech text-white font-semibold hover:opacity-90 transition-opacity px-8 py-6 text-lg rounded-xl"
-              onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-            >
-              Ver Nuestro 3D
-            </Button>
+            <ul className="space-y-2 text-sm">
+              <li className="flex items-center text-gray-400">
+                <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-purple-600 to-cyan-500 mr-2" />
+                Assets para Videojuegos
+              </li>
+              <li className="flex items-center text-gray-400">
+                <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-purple-600 to-cyan-500 mr-2" />
+                Visualización 3D
+              </li>
+            </ul>
           </div>
 
-          <div className="relative animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-primary/20">
-              <img 
-                src={vrUserImg} 
-                alt="Usuario con gafas VR experimentando realidad virtual"
-                className="w-full h-auto"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent" />
+          <div className="glass-card p-6 rounded-2xl hover:scale-105 transition-all duration-300">
+            <div className="w-14 h-14 rounded-xl gradient-tech flex items-center justify-center mb-4">
+              <Gamepad2 className="h-7 w-7 text-white" />
             </div>
-            
-            {/* Floating elements */}
-            <div className="absolute -top-6 -right-6 w-32 h-32 bg-primary/20 rounded-full blur-2xl animate-pulse-glow" />
-            <div className="absolute -bottom-6 -left-6 w-40 h-40 bg-accent/20 rounded-full blur-2xl animate-pulse-glow" style={{ animationDelay: "1s" }} />
+            <h3 className="text-xl font-bold mb-3 text-white">VR & Gaming</h3>
+            <p className="text-gray-300 mb-4 leading-relaxed text-sm">
+              Experiencias inmersivas y desarrollo de videojuegos.
+            </p>
+            <ul className="space-y-2 text-sm">
+              <li className="flex items-center text-gray-400">
+                <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-purple-600 to-cyan-500 mr-2" />
+                Realidad Virtual (VR)
+              </li>
+              <li className="flex items-center text-gray-400">
+                <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-purple-600 to-cyan-500 mr-2" />
+                Unity & Unreal Engine
+              </li>
+            </ul>
           </div>
         </div>
+      </div>
+
+      {/* Curved border bottom */}
+      <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-none rotate-180 text-gray-900">
+        <svg className="relative block w-full h-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" 
+                className="fill-gray-900"></path>
+        </svg>
       </div>
     </section>
   );

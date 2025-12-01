@@ -34,12 +34,12 @@ const Contact = ({ id }: { id?: string }) => {
         <form onSubmit={handleSubmit} className="bg-gradient-to-br from-gray-900 to-black p-10 rounded-3xl space-y-8 animate-fade-in shadow-2xl" style={{ animationDelay: "0.2s" }}>
           <div>
             <label htmlFor="name" className="block text-sm font-semibold mb-3 text-white">
-              Nombre Completo
+              Nombre
             </label>
             <Input
               id="name"
               type="text"
-              placeholder="Juan Pérez"
+              placeholder="Tu nombre"
               required
               className="bg-gray-800/50 border-gray-700 py-6 text-lg rounded-xl text-white placeholder:text-gray-400"
             />
@@ -47,15 +47,34 @@ const Contact = ({ id }: { id?: string }) => {
 
           <div>
             <label htmlFor="email" className="block text-sm font-semibold mb-3 text-white">
-              Email
+              Correo
             </label>
             <Input
               id="email"
               type="email"
-              placeholder="juan@ejemplo.com"
+              placeholder="tu@correo.com"
               required
               className="bg-gray-800/50 border-gray-700 py-6 text-lg rounded-xl text-white placeholder:text-gray-400"
             />
+          </div>
+
+          <div>
+            <label htmlFor="service" className="block text-sm font-semibold mb-3 text-white">
+              Tipo de Servicio
+            </label>
+            <select
+              id="service"
+              required
+              className="w-full bg-gray-800/50 border border-gray-700 py-4 px-4 text-lg rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-primary"
+            >
+              <option value="">Selecciona un servicio</option>
+              <option value="desarrollo-web">Desarrollo Web</option>
+              <option value="desarrollo-movil">Desarrollo Móvil</option>
+              <option value="aplicacion-ia">Aplicación IA</option>
+              <option value="modelado-vr">Modelado 3D y VR</option>
+              <option value="mantenimiento">Mantenimiento</option>
+              <option value="asesoria-hosting">Asesoría de Hosting</option>
+            </select>
           </div>
 
           <div>
