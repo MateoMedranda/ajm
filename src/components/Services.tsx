@@ -68,21 +68,21 @@ const Services = ({
     elementRef: webRef,
     isVisible: webVisible
   } = useScrollAnimation();
-  return <section id={id} className="relative py-32 px-4 bg-white">
+  return (
+    <section id={id} className="relative py-32 px-4 bg-white">
       {/* Curved border top */}
       <div className="absolute top-0 left-0 right-0 overflow-hidden leading-none text-background">
-        
+
       </div>
-      
+
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div
           ref={titleRef}
-          className={`text-center mb-20 transition-all duration-700 will-change-transform will-change-opacity ${
-            titleVisible
+          className={`text-center mb-20 transition-all duration-700 will-change-transform will-change-opacity ${titleVisible
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-10"
-          }`}
+            }`}
         >
           <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
             Nuestros <span className="gradient-text">Servicios</span>
@@ -111,18 +111,16 @@ const Services = ({
                 <div
                   key={service.title}
                   style={{ transitionDelay: `${index * 150}ms` }}
-                  className={`group transition-all duration-700 will-change-transform will-change-opacity ${
-                    webVisible
+                  className={`group transition-all duration-700 will-change-transform will-change-opacity ${webVisible
                       ? "opacity-100 translate-y-0"
                       : "opacity-0 translate-y-10"
-                  }`}
+                    }`}
                 >
                   <div
-                    className={`bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border h-full flex flex-col ${
-                      service.featured
+                    className={`bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border h-full flex flex-col ${service.featured
                         ? "border-purple-500 ring-4 ring-purple-500/20 transform md:-translate-y-2"
                         : "border-gray-100"
-                    }`}
+                      }`}
                   >
                     {service.featured && (
                       <div className="bg-gradient-to-r from-purple-600 to-cyan-500 text-white text-center py-2 text-sm font-bold">
@@ -176,11 +174,10 @@ const Services = ({
                       </ul>
 
                       <Button
-                        className={`w-full font-semibold py-5 rounded-xl transition-all ${
-                          service.featured
+                        className={`w-full font-semibold py-5 rounded-xl transition-all ${service.featured
                             ? "gradient-tech text-white hover:opacity-90"
                             : "bg-gray-900 hover:bg-gray-800 text-white"
-                        }`}
+                          }`}
                         onClick={() =>
                           document
                             .getElementById("contact")
