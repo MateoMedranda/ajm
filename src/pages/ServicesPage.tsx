@@ -10,7 +10,7 @@ const ServicesPage = () => {
       id: "desarrollo-web",
       icon: Code2,
       title: "Desarrollo Web",
-      subtitle: "Soluciones web profesionales",
+      subtitle: "Soluciones web profesionales y atractivas",
       description: "Creamos landing pages, sitios corporativos y aplicaciones web completas con las últimas tecnologías.",
       features: ["Landing Pages", "Sitios Corporativos", "Aplicaciones Web", "E-commerce", "Progressive Web Apps"],
     },
