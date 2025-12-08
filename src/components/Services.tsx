@@ -20,7 +20,7 @@ const services = [{
   description: "Sitio web completo con múltiples secciones, blog integrado y panel de administración. Ideal para empresas que buscan una presencia sólida online.",
   image: tabletCodeImg,
   features: ["Multi-página", "CMS Integrado", "Blog y Noticias", "Dashboard Admin", "Integración APIs"],
-  price: "Desde $999",
+  price: "Desde $450",
   cta: "Consultar Web"
 }, {
   icon: Sparkles,
@@ -29,7 +29,7 @@ const services = [{
   description: "Sistema web avanzado con arquitectura escalable, base de datos, autenticación de usuarios y funcionalidades personalizadas para tu negocio.",
   image: tabletCodeImg,
   features: ["Autenticación Usuarios", "Base de Datos", "API REST", "Panel Completo", "Escalabilidad Cloud", "Mantenimiento"],
-  price: "Desde $2,999",
+  price: "Desde $1450",
   cta: "Empezar App",
   featured: true
 }];

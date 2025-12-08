@@ -13,22 +13,22 @@ const AboutPage = () => {
 
   const teamMembers = [
     {
-      name: "Abelardo Pastore",
-      role: "CEO & Full Stack Developer",
-      description: "Experto en arquitectura de software y desarrollo full-stack con más de 8 años de experiencia en soluciones empresariales.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop"
+      name: "Juan Baez",
+      role: "Full Stack Developer",
+      description: "Desarrollador full stack con experiencia en gestion de base de datos e integracion IOT",
+      image: "src/assets/juan.jpeg"
     },
     {
-      name: "José Medina",
-      role: "AI & Machine Learning Specialist",
-      description: "Especialista en inteligencia artificial y RAG, enfocado en crear soluciones innovadoras que transforman datos en conocimiento.",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop"
+      name: "Mateo Medranda",
+      role: "Full Stack Developer",
+      description: "Desarrollador especializado en el uspo de IA y aplicaciones moviles",
+      image: "src/assets/mateo.png"
     },
     {
-      name: "María González",
-      role: "UX/UI Designer & Frontend Lead",
-      description: "Diseñadora apasionada por crear experiencias digitales excepcionales con interfaces intuitivas y modernas.",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop"
+      name: "Aless Perez",
+      role: "Diseñador web",
+      description: "Diseñador web especializado en la recoleccion de requerimientos y diseño multifuncional.",
+      image: "src/assets/Javi.jpe"
     }
   ];
 
