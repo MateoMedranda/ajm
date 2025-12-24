@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=BBH+Bogle&display=swap');
 
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
@@ -63,6 +64,13 @@ All colors MUST be HSL.
 
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
+  .bbh-bogle-regular {
+    font-family: "BBH Bogle", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+  }
+
 
   .dark {
     --background: 220 45% 8%;
@@ -165,3 +173,4 @@ All colors MUST be HSL.
     }
   }
 }
+

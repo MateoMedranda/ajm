@@ -1,15 +1,18 @@
 import { Code2, Sparkles, Layers } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
-import tabletCodeImg from "@/assets/tablet-code-3d.jpg";
+import landingPage from "@/assets/landing-page.jpg";
+import ecommerce from "@/assets/ecommerce.jpg";
+import appWeb from "@/assets/aplicacion_web.png";
 import aiBrainImg from "@/assets/ai-brain-database-3d.jpg";
 import serverRackImg from "@/assets/server-rack-3d.jpg";
+
 const services = [{
   icon: Code2,
   title: "Landing Page",
   subtitle: "Tu Presencia Digital Impactante",
   description: "Página de aterrizaje profesional optimizada para conversión. Perfecta para lanzar tu producto, servicio o campaña con máximo impacto visual.",
-  image: tabletCodeImg,
+  image: landingPage,
   features: ["Diseño Responsivo", "SEO Optimizado", "Carga Ultra Rápida", "Formularios de Contacto"],
   price: "Desde $299",
   cta: "Solicitar Landing"
@@ -18,7 +21,7 @@ const services = [{
   title: "Página Web Corporativa",
   subtitle: "Profesionalismo y Funcionalidad",
   description: "Sitio web completo con múltiples secciones, blog integrado y panel de administración. Ideal para empresas que buscan una presencia sólida online.",
-  image: tabletCodeImg,
+  image: ecommerce,
   features: ["Multi-página", "CMS Integrado", "Blog y Noticias", "Dashboard Admin", "Integración APIs"],
   price: "Desde $450",
   cta: "Consultar Web"
@@ -27,7 +30,7 @@ const services = [{
   title: "Aplicación Web Completa",
   subtitle: "Soluciones Escalables y Robustas",
   description: "Sistema web avanzado con arquitectura escalable, base de datos, autenticación de usuarios y funcionalidades personalizadas para tu negocio.",
-  image: tabletCodeImg,
+  image: appWeb,
   features: ["Autenticación Usuarios", "Base de Datos", "API REST", "Panel Completo", "Escalabilidad Cloud", "Mantenimiento"],
   price: "Desde $1450",
   cta: "Empezar App",
@@ -37,7 +40,7 @@ const additionalServices = [{
   icon: Code2,
   title: "Apps Móviles",
   description: "Desarrollo nativo y híbrido para iOS y Android con rendimiento óptimo.",
-  image: tabletCodeImg,
+  image: appWeb,
   features: ["iOS & Android", "React Native", "Push Notifications", "App Store Deploy"],
   cta: "Ver Apps Móviles"
 }, {
@@ -69,7 +72,7 @@ const Services = ({
     isVisible: webVisible
   } = useScrollAnimation();
   return (
-    <section id={id} className="relative py-32 px-4 bg-white">
+    <section id={id} className="relative py-14 px-4 bg-white">
       {/* Curved border top */}
       <div className="absolute top-0 left-0 right-0 overflow-hidden leading-none text-background">
 
@@ -80,12 +83,12 @@ const Services = ({
         <div
           ref={titleRef}
           className={`text-center mb-20 transition-all duration-700 will-change-transform will-change-opacity ${titleVisible
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-10"
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-10"
             }`}
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
-            Nuestros <span className="gradient-text">Servicios</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+            Nuestros <span className="text-[#4040aa]">Servicios</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Soluciones web y móviles completas para impulsar tu transformación digital
@@ -94,15 +97,6 @@ const Services = ({
 
         {/* Servicios Web */}
         <div ref={webRef} className="mb-20">
-          <div className="text-center mb-12">
-            <h3 className="text-4xl font-bold text-gray-900 mb-4">
-              <span className="gradient-text">Desarrollo Web</span> - Nuestro Servicio Estrella
-            </h3>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Desde una landing page impactante hasta aplicaciones web complejas
-            </p>
-          </div>
-
           <div className="grid md:grid-cols-3 gap-8">
             {services.map((service, index) => {
               const Icon = service.icon;
@@ -112,14 +106,14 @@ const Services = ({
                   key={service.title}
                   style={{ transitionDelay: `${index * 150}ms` }}
                   className={`group transition-all duration-700 will-change-transform will-change-opacity ${webVisible
-                      ? "opacity-100 translate-y-0"
-                      : "opacity-0 translate-y-10"
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-10"
                     }`}
                 >
                   <div
                     className={`bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 border h-full flex flex-col ${service.featured
-                        ? "border-purple-500 ring-4 ring-purple-500/20 transform md:-translate-y-2"
-                        : "border-gray-100"
+                      ? "border-purple-500 ring-4 ring-purple-500/20 transform md:-translate-y-2"
+                      : "border-gray-100"
                       }`}
                   >
                     {service.featured && (
@@ -175,8 +169,8 @@ const Services = ({
 
                       <Button
                         className={`w-full font-semibold py-5 rounded-xl transition-all ${service.featured
-                            ? "gradient-tech text-white hover:opacity-90"
-                            : "bg-gray-900 hover:bg-gray-800 text-white"
+                          ? "gradient-tech text-white hover:opacity-90"
+                          : "bg-gray-900 hover:bg-gray-800 text-white"
                           }`}
                         onClick={() =>
                           document

@@ -79,7 +79,6 @@ const TechStack = ({ id }: { id?: string }) => {
       </div>
       <br></br>
       <br></br>
-      <br></br>
       {/* Curved border bottom - Estático */}
       <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-none rotate-180 text-white">
         <svg className="relative block w-full h-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">

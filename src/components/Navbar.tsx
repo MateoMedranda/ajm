@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
-import ajmLogo from "@/assets/ajm-hex-logo.png";
+import ajmLogo from "@/assets/ajm-letters.png";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,6 +12,23 @@ import {
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const serviceLinks = [
     { name: "Desarrollo Web", href: "/servicios#desarrollo-web" },
@@ -34,16 +51,20 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
+    <nav className={`fixed top-0 left-0 right-0 z-50  backdrop-blur-md border-b border-border ${
+    scrolled ? 'bg-background/95' : 'bg-transparent'
+  }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex-shrink-0">
-            <img 
-              src={ajmLogo} 
-              alt="AJM Web Solutions" 
-              className="h-10 w-10 cursor-pointer hover:opacity-80 transition-opacity" 
-            />
+            <div className="flex items-center gap-2">
+              <img
+                src={ajmLogo}
+                alt="AJM Web Solutions"
+                className="h-10 w-16 cursor-pointer hover:opacity-80 transition-opacity"
+              />
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -51,22 +72,22 @@ const Navbar = () => {
             <div className="ml-10 flex items-baseline space-x-8">
               <Link
                 to="/"
-                className="text-muted-foreground hover:text-primary transition-colors font-medium"
+                className="text-muted-foreground hover:text-white transition-colors font-medium"
               >
                 Inicio
               </Link>
-              
+
               <DropdownMenu>
-                <DropdownMenuTrigger className="text-muted-foreground hover:text-primary transition-colors font-medium flex items-center gap-1 focus:outline-none">
+                <DropdownMenuTrigger className="text-muted-foreground hover:text-white transition-colors font-medium flex items-center gap-1 focus:outline-none">
                   Servicios
                   <ChevronDown className="h-4 w-4" />
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="bg-background/98 backdrop-blur-md border-border">
+                <DropdownMenuContent className="bg-background/95 backdrop-blur-md border-border">
                   {serviceLinks.map((link) => (
                     <DropdownMenuItem
                       key={link.name}
                       onClick={() => handleServiceClick(link.href)}
-                      className="cursor-pointer hover:bg-accent/50"
+                      className="cursor-pointer focus:bg-blue-600 focus:text-white"
                     >
                       {link.name}
                     </DropdownMenuItem>
@@ -76,21 +97,21 @@ const Navbar = () => {
 
               <Link
                 to="/nosotros"
-                className="text-muted-foreground hover:text-primary transition-colors font-medium"
+                className="text-muted-foreground hover:text-white transition-colors font-medium"
               >
                 Nosotros
               </Link>
 
               <Link
                 to="/central-dev"
-                className="text-muted-foreground hover:text-primary transition-colors font-medium"
+                className="text-muted-foreground hover:text-white transition-colors font-medium"
               >
                 Central Dev
               </Link>
 
               <Link
                 to="/contacto"
-                className="text-muted-foreground hover:text-primary transition-colors font-medium"
+                className="text-muted-foreground hover:text-white transition-colors font-medium"
               >
                 Contacto
               </Link>
@@ -120,7 +141,7 @@ const Navbar = () => {
             >
               Inicio
             </Link>
-            
+
             <div className="px-3 py-2 text-base font-medium text-muted-foreground">
               Servicios
             </div>
