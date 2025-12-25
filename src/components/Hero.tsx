@@ -111,21 +111,21 @@ const particles = useMemo(() => {
           No te quedes en el pasado y da el gran paso al mundo digital
           <br />
           <br />
-          <span className="text-primary font-semibold">Con nosotros, tus ideas se vuelven una realidad digital</span>
+          <span className="text-[#98ffff] font-semibold">Con nosotros, tus ideas se vuelven una realidad digital</span>
         </p>
 
         <div
           className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in"
           style={{ animationDelay: "0.4s" }}
         >
-          <Button size="lg" className="gradient-tech text-white font-semibold hover:opacity-90 transition-opacity" onClick={scrollToContact}>
+          <Button size="lg" className="bg-[#3434ff] text-white font-semibold hover:opacity-90 transition-opacity" onClick={scrollToContact}>
             Empezar Ahora
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
           <Button
             size="lg"
             variant="outline"
-            className="border-primary text-primary hover:bg-primary/10"
+            className="border-[#d400ff] text-[white] hover:bg-primary/10 hover:text-white hover:border-[blue]"
             onClick={() => document.getElementById("rag-section")?.scrollIntoView({ behavior: "smooth" })}
           >
             Ver Soluciones IA

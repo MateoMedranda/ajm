@@ -27,14 +27,14 @@ const SpecializationSection = ({ id }: { id?: string }) => {
       </div>
 
       {/* CAMBIO 2: Aplicamos la animación AQUI, al contenedor del contenido */}
-      <div className={`max-w-6xl mx-auto relative z-10 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-24'
+      <div className={`max-w-6xl mx-auto relative z-10 transition-all duration-1000 overflow-hidden ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-24'
         }`}>
         <div className="text-center mb-12">
           <h3 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-            Modelado <span className="gradient-text">3D y Realidad Virtual</span>
+            ¿Por qué dar el salto a una <span className="gradient-text">Web App</span>?
           </h3>
-          <p className="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto">
-            Experiencias inmersivas para videojuegos y aplicaciones
+          <p className="text-lg text-gray-300 leading-relaxed max-w-5xl mx-auto">
+            Conoce los beneficios clave de las aplicaciones web para tu negocio y cómo pueden transformar tu presencia digital.
           </p>
         </div>
 
