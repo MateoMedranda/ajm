@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 const Services = lazy(() => import("@/components/Services"));
 const SpecializationSection = lazy(() => import("@/components/SpecializationSection"));
 const TechStack = lazy(() => import("@/components/TechStack"));
+const ProcessSection = lazy(() => import("@/components/ProcessSection"));
 const Contact = lazy(() => import("@/components/Contact"));
 
 // Componente de carga simple para que no haya saltos bruscos
@@ -32,6 +33,10 @@ const Index = () => {
 
       <Suspense fallback={<SectionLoader />}>
         <TechStack id="tech" />
+      </Suspense>
+
+      <Suspense fallback={<SectionLoader />}>
+        <ProcessSection id="process" />
       </Suspense>
 
       <Suspense fallback={<SectionLoader />}>
