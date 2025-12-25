@@ -1,6 +1,6 @@
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useEffect, useState, useCallback } from "react";
-import { Globe, Zap, Shield, TrendingUp, Users, Clock } from "lucide-react";
+import { Globe, Zap, Shield, TrendingUp, Users, Clock, ChevronLeft, ChevronRight } from "lucide-react";
 import tabletCodeImg from "@/assets/tablet-code-3d.jpg";
 import serverRackImg from "@/assets/server-rack-3d.jpg";
 import aiBrainImg from "@/assets/ai-brain-database-3d.jpg";
@@ -53,6 +53,10 @@ const SpecializationSection = ({ id }: { id?: string }) => {
 
   const nextSlide = useCallback(() => {
     setCurrentIndex((prev) => (prev + 1) % totalSlides);
+  }, [totalSlides]);
+
+  const prevSlide = useCallback(() => {
+    setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
   }, [totalSlides]);
 
   useEffect(() => {
@@ -153,20 +157,41 @@ const SpecializationSection = ({ id }: { id?: string }) => {
           </div>
         </div>
 
-        {/* Dots Indicator */}
-        <div className="flex justify-center gap-2 mt-8">
-          {benefits.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                index === currentIndex
-                  ? "bg-gradient-to-r from-purple-600 to-cyan-500 w-8"
-                  : "bg-gray-600 hover:bg-gray-500"
-              }`}
-              aria-label={`Ir al slide ${index + 1}`}
-            />
-          ))}
+        {/* Navigation Controls */}
+        <div className="flex justify-center items-center gap-4 mt-8">
+          {/* Prev Arrow */}
+          <button
+            onClick={prevSlide}
+            className="w-10 h-10 rounded-full bg-gray-800/80 border border-gray-700 hover:bg-gray-700 hover:border-purple-500/50 flex items-center justify-center transition-all duration-300 group"
+            aria-label="Slide anterior"
+          >
+            <ChevronLeft className="h-5 w-5 text-gray-400 group-hover:text-white transition-colors" />
+          </button>
+
+          {/* Dots Indicator */}
+          <div className="flex gap-2">
+            {benefits.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                  index === currentIndex
+                    ? "bg-gradient-to-r from-purple-600 to-cyan-500 w-8"
+                    : "bg-gray-600 hover:bg-gray-500"
+                }`}
+                aria-label={`Ir al slide ${index + 1}`}
+              />
+            ))}
+          </div>
+
+          {/* Next Arrow */}
+          <button
+            onClick={nextSlide}
+            className="w-10 h-10 rounded-full bg-gray-800/80 border border-gray-700 hover:bg-gray-700 hover:border-purple-500/50 flex items-center justify-center transition-all duration-300 group"
+            aria-label="Siguiente slide"
+          >
+            <ChevronRight className="h-5 w-5 text-gray-400 group-hover:text-white transition-colors" />
+          </button>
         </div>
       </div>
 
