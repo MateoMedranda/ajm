@@ -100,19 +100,19 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Mail className="h-4 w-4 text-primary" />
-                <a href="mailto:contacto@ajmweb.com" className="hover:text-primary transition-colors">
-                  contacto@ajmweb.com
+                <a href="mailto:ajmcode@gmail.com" className="hover:text-primary transition-colors">
+                  ajmcode@gmail.com
                 </a>
               </li>
               <li className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Phone className="h-4 w-4 text-primary" />
                 <a href="tel:+573001234567" className="hover:text-primary transition-colors">
-                  +57 300 123 4567
+                  +593 
                 </a>
               </li>
               <li className="flex items-start gap-2 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 text-primary mt-0.5" />
-                <span>Bogotá, Colombia</span>
+                <span>Quito, Ecuador</span>
               </li>
             </ul>
           </div>

@@ -3,6 +3,9 @@ import Footer from "@/components/Footer";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { Target, Eye, Heart } from "lucide-react";
 import anuncioVideo from "@/assets/Anuncio1AJM.mp4";
+import Juan from "@/assets/juan.jpeg";
+import Mateo from "@/assets/mateo.png";
+import Javier from "@/assets/Javi.jpeg";
 
 const AboutPage = () => {
   const missionAnim = useScrollAnimation();
@@ -16,19 +19,19 @@ const AboutPage = () => {
       name: "Juan Baez",
       role: "Full Stack Developer",
       description: "Desarrollador full stack con experiencia en gestion de base de datos e integracion IOT",
-      image: "src/assets/juan.jpeg"
+      image: Juan
     },
     {
       name: "Mateo Medranda",
       role: "Full Stack Developer",
       description: "Desarrollador especializado en el uspo de IA y aplicaciones moviles",
-      image: "src/assets/mateo.png"
+      image: Mateo
     },
     {
       name: "Aless Perez",
       role: "Diseñador web",
       description: "Diseñador web especializado en la recoleccion de requerimientos y diseño multifuncional.",
-      image: "src/assets/Javi.jpe"
+      image: Javier
     }
   ];
 
