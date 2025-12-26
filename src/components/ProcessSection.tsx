@@ -211,7 +211,7 @@ const ProcessSection = ({ id }: { id?: string }) => {
         >
           <path
             d="M0 60V20C240 0 480 0 720 20C960 40 1200 40 1440 20V60H0Z"
-            className="fill-background"
+            className="fill-white"
           />
         </svg>
       </div>
